@@ -1,5 +1,5 @@
 import pandas as pd
-import google-generativeai as genai   
+import google_generativeai as genai   
 from config import settings
 import os
 import json
