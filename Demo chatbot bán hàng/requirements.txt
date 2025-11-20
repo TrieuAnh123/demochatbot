@@ -1,7 +1,8 @@
 streamlit
 pandas
-google.generativeai
+google-generativeai
 openpyxl
 python-dotenv
+
 
 
