@@ -1,12 +1,12 @@
 import pandas as pd
-from google import genai
+import google.generativeai as genai   
 from config import settings
 import os
 import json
 import re
 
 # --- Cấu hình API ---
-client = genai.Client(api_key=settings.GEMINI_API_KEY)
+genai.configure(api_key=settings.GEMINI_API_KEY)  # 🔧 Sửa cấu hình API
 
 # --- Hàm đọc danh mục sản phẩm ---
 def load_products():
@@ -89,10 +89,8 @@ def generate_ai_response(user_input, chat_history):
     """
 
     try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=[prompt]
-        )
+        model = genai.GenerativeModel("gemini-2.5-flash")  # 🔧 Sửa cách tạo model
+        response = model.generate_content(prompt)          # 🔧 Sửa gọi model
         ai_text = response.text or ""
 
         # --- Kiểm tra nếu AI trả về ORDER_INFO ---
