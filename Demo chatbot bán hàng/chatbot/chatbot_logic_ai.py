@@ -6,7 +6,7 @@ import json
 import re
 
 # --- Cấu hình API ---
-genai.configure(api_key=settings.GEMINI_API_KEY)  # 🔧 Sửa cấu hình API
+genai.configure(api_key=settings.GEMINI_API_KEY)  
 
 # --- Hàm đọc danh mục sản phẩm ---
 def load_products():
